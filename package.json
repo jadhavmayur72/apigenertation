@@ -1,0 +1,28 @@
+{
+  "name": "apigenertation",
+  "version": "1.0.0",
+  "description": "practice day 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadhavmayur72/apigenertation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadhavmayur72/apigenertation/issues"
+  },
+  "homepage": "https://github.com/jadhavmayur72/apigenertation#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.2.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
