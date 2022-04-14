@@ -57,17 +57,20 @@ router.patch("/:id",async(req , res)=>{
 
 // quarry to find the data by name------------------
 
-router.get("/?name",async(req , res)=>{
-    try{
-        const search = req.test.name
-        const test= await Test.findOne({$text:search}).lean().exec();
-        console.log("searched")
-        return res.status(200).send(test)
-    }
-    catch (err){
-        console.log(err)
-    }
-})
+// router.get("/$search?q=",async(req , res)=>{
+//     try{
+        
+//         const search = req.query.name
+//         console.log(search)
+//         const test= await Test.findOne({name:search}).lean().exec();
+       
+//         return res.status(200).send(test)
+//     }
+//     catch (err){
+//         console.log(err)
+//     }
+// })
+
 
 // to delete the data by id-------------------------
 
@@ -85,18 +88,18 @@ router.delete("/:id",async(req , res)=>{
 
 
 // pagination ----------------------------------
-router.get("/",async(req , res)=>{
-    try{
-        let page= req.query.page
-        let limit= req.query.limit
+// router.get("/",async(req , res)=>{
+//     try{
+//         let page= req.query.page
+//         let limit= req.query.limit
 
-        let artical= await Test.find().paginate({page:page,limit:limit}).exec();
-        res.json(artical)
-    }
-    catch (err){
-        console.log(err)
-    }
-})
+//         let artical= await Test.find().paginate({page:page,limit:limit}).exec();
+//         res.json(artical)
+//     }
+//     catch (err){
+//         console.log(err)
+//     }
+// })
 
 
 
