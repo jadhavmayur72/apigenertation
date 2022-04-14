@@ -19,6 +19,18 @@ router.get('/create',(req,res,next)=>{
     
 })
 
-router.post("/upload",upload)
+router.post("/upload",upload.single('blogimage') ,(req,res,next)=>{
+    let fileinfo=req.file;
+    let title= req.body.title;
+    console.log(title);
+    res.send(fileinfo)
+})
 
+
+router.post("/upload",upload.array('blogimage',5) ,(req,res,next)=>{
+    let fileinfo=req.files;
+    let title= req.body.title;
+    console.log(title);
+    res.send(fileinfo)
+})
 module.exports=router
