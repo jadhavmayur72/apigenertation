@@ -1,4 +1,5 @@
 const express= require("express")
+const logger= require("../logger.js/logger")
 const router= express.Router()
 const Test= require("../models/test.model")
 
@@ -11,7 +12,7 @@ router.post("/",async(req , res)=>{
     }
     catch (err){
 
-        console.log(err)
+        logger.error(err)
     }
 })
 
@@ -22,7 +23,7 @@ router.get("/",async(req , res)=>{
        return res.status(200).send(test)
     }
     catch (err){
-        console.log(err)
+        logger.error(err)
     }
 })
 
@@ -33,7 +34,7 @@ router.get("/:id",async(req , res)=>{
        return res.status(200).send(test)
     }
     catch (err){
-        console.log(err)
+        logger.error(err)
     }
 })
 
@@ -51,25 +52,11 @@ router.patch("/:id",async(req , res)=>{
          res.json(change1)
     }
     catch (err){
-        console.log(err)
+        logger.error(err)
     }
 })
 
-// quarry to find the data by name------------------
 
-// router.get("/$search?q=",async(req , res)=>{
-//     try{
-        
-//         const search = req.query.name
-//         console.log(search)
-//         const test= await Test.findOne({name:search}).lean().exec();
-       
-//         return res.status(200).send(test)
-//     }
-//     catch (err){
-//         console.log(err)
-//     }
-// })
 
 
 // to delete the data by id-------------------------
@@ -82,7 +69,7 @@ router.delete("/:id",async(req , res)=>{
          res.json(change2)
     }
     catch (err){
-        console.log(err)
+        logger.error(err)
     }
 })
 
@@ -101,7 +88,21 @@ router.delete("/:id",async(req , res)=>{
 //     }
 // })
 
+// quarry to find the data by name------------------
 
+// router.get("/$search?q=",async(req , res)=>{
+//     try{
+        
+//         const search = req.query.name
+//         console.log(search)
+//         const test= await Test.findOne({name:search}).lean().exec();
+       
+//         return res.status(200).send(test)
+//     }
+//     catch (err){
+//         console.log(err)
+//     }
+// })
 
 
 

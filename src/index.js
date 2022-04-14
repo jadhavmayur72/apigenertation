@@ -1,5 +1,6 @@
 require("dotenv").config()
 const express = require("express")
+const logger=require("../src/logger.js/logger")
 
 
 const connect= require("./config/db")
@@ -17,7 +18,7 @@ const port = process.env.PORT
 const start=()=>{
     app.listen(port,async()=>{
         await connect()
-        console.log(`Listining to port ${port}`)
+        logger.info(`Listining to port ${port}`)
     })
 }
 start()
