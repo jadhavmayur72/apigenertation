@@ -1,0 +1,5 @@
+require("dotenv").config()
+let http= require("http")
+console.log(process.env.username)
+console.log(process.env.port)
+console.log(process.env.password)
