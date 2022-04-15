@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="display">
+       <h1>Hello</h1>   
+        
+    </div>
+    <div id="picture" style="width: 100px; height: 100px; border: 1px solid red;"></div>
+</body>
+</html>
+<script>
+    let display= document.getElementById("display")
+    let showdata=async()=>{
+
+        let req= await fetch("http://localhost:9001/user")
+        let res= await req.json()
+        console.log(res)
+        fetchData(res)
+       
+     
+    }
+    showdata()
+    let fetchData=(data)=>{
+      data.forEach(el => {
+        let h1= document.createElement("h1")
+            h1.innerText=el.name +" "+el.age
+
+
+            display.append(h1)
+      });
+    }
+
+
+    let imgData=async()=>{
+        let req= await fetch("http://localhost:9001/uploads")
+        let res= await req.json()
+        console.log(res)
+      
+    }
+    imgData()
+</script>

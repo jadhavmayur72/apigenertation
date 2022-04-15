@@ -12,18 +12,18 @@ const storage=multer.diskStorage({
     }
 })
 
-function fileFilter (req, file, cb) {
-// if(file.mimetype === "image/jpeg"){
-    cb(null, true)
-// }else{
-    cb(null, false)
-// }
+// function fileFilter (req, file, cb) {
+// // if(file.mimetype === "image/jpeg"){
+//     cb(null, true)
+// // }else{
+//     cb(null, false)
+// // }
   
-}
+// }
 //  to store the upload--------------------
 const upload =multer({
     storage:storage,
-    fileFilter:fileFilter
+    // fileFilter:fileFilter
 })
 
 module.exports = upload
