@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const testSchema = new Schema({
+const userSchema = new Schema({
   name: { type: String, required: true },
   age: { type: Number, required: true },
   mobile_number: { type: Number, required: true },
@@ -7,5 +7,5 @@ const testSchema = new Schema({
   date: { type: Date, default: Date.now },
 });
 
-const Test_data = model("test", testSchema);
-module.exports = Test_data;
+const userData = model("user", userSchema);
+module.exports = userData;

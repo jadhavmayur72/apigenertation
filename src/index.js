@@ -15,7 +15,7 @@ app.use(express.json())
 const userController= require("./controllers/user.controller")
 const blogController=require("./routes/blogs")
 
-app.use("/test",userController)
+app.use("/user",userController)
 const port = process.env.PORT
 app.use("/blogs",blogController)
 app.use("/uploads",blogController)

@@ -12,12 +12,12 @@
 
         <h1>Forms upload</h1>
         <div >
-            <form action="/src/routes/blogs.js" method="post" enctype="multipart/form-data">
-            <div><input type="text" name="title" placeholder="title"></div>
+            <form id="form">
+            <!-- <div><input id="title" type="text" name="title" placeholder="title"></div> -->
             <br>
-            <div><input type="file" name="blogimage" ></div>
+            <div><input id="img" type="file" name="blogimage" ></div>
             <br>
-            <button type="submit">Upload</button>
+            <button type="submit" >Upload</button>
             </form>
         </div>
         </div>
@@ -25,9 +25,29 @@
 
 </html>
 <script>
-    function Upload(){
-    console.log("Uploaded")
-}
+//   let form = document.getElementById("form").addEventListener("submit",upload)
+//   let data = {
+           
+//            pics:document.getElementById("img").value 
+//        }
+//    async function upload(e){
+      
+//        console.log(data.pics)
+//         e.preventDefault()
+//        const res = await fetch("http://localhost:9001/uploads",{
+
+    
+//            method:"POST",
+        
+//            headers: {
+//       'Content-Type': 'application/json'
+//       // 'Content-Type': 'application/x-www-form-urlencoded',
+//     },
+//     body:JSON.stringify(data)
+//        })
+//        const out = await res.json()
+//        console.log(out)
+// }
 </script>
     
     

@@ -1,10 +1,10 @@
 const path= require("path")
-const multer= require("multer")
 
+const multer= require("multer")
 
 const storage=multer.diskStorage({
     destination: function(req,file,cb){
-        cb(null,path.join(__dirname,"../src/Uploads"))
+        cb(null,path.join(__dirname,"../Uploads"))
 
     },
     filename:(req,file,cb)=>{
@@ -13,11 +13,11 @@ const storage=multer.diskStorage({
 })
 
 function fileFilter (req, file, cb) {
-if(file.mimetype === "image/jpeg"){
+// if(file.mimetype === "image/jpeg"){
     cb(null, true)
-}else{
+// }else{
     cb(null, false)
-}
+// }
   
 }
 //  to store the upload--------------------
