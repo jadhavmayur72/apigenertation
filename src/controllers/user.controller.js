@@ -65,7 +65,7 @@ router.delete("/:id",async(req , res)=>{
     try{
         const test= await Users.findById(req.params.id)
         // test.age=req.body.age
-        const change2= await test.remove()
+        const change2= await test.remove() 
          res.json(change2)
     }
     catch (err){
